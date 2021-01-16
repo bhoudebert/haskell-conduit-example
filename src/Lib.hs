@@ -1,6 +1,4 @@
-module Lib
-    ( processingDataByChunks
-    ) where
+module Lib where
 
 import Conduit
 
@@ -38,7 +36,7 @@ buildProcessingContentLogMessage content = "\t\t" <> processorCaption <> "Proces
 
 -- | Constant size of database page.
 pageSize :: Int
-pageSize = 30
+pageSize = 10
 
 -- | Constant defining the size of chunks that will be dealt by our processor.
 -- It's a wanted design to have a smaller value than the pageSize for interesting logging.
