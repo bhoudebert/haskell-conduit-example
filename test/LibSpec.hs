@@ -8,7 +8,12 @@ import Lib
 import Test.Hspec
 
 import Test.QuickCheck
+import Test.QuickCheck.Instances ()
+
 import GHC.IO (liftIO)
+
+import Generic.Random
+import Test.QuickCheck.Monadic
 
 spec :: Spec
 spec = do
@@ -36,7 +41,13 @@ spec = do
       content `shouldBe` []
     -- test fake handler
     it "should do nothing at all" $ do
+      let inputData = [1..10]
       result <- doSomethingWithThisChunks inputData
       result `shouldBe` inputData
-      where
-          inputData = [1..10]
+    it "should not nothing with generated ata" $ property prop_doNothingInReality
+
+-- | Simple example for an generator handling IO.
+prop_doNothingInReality :: [Int] -> Property
+prop_doNothingInReality someData = monadicIO $ do
+  content <- run $ doSomethingWithThisChunks someData
+  assert $ someData == content
