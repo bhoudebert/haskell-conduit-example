@@ -23,6 +23,7 @@ spec = do
       isTheLastPage [1..(quot pageSize 2)] `shouldBe` True
     it "shouldn't be the last page" $
       isTheLastPage [1..pageSize] `shouldBe` False
+
     -- testing page generator.
     it "page 1 should be full" $ do
       content <- loadPageFromDatabase 1
@@ -39,6 +40,7 @@ spec = do
     it "page 5 should be empty" $ do
       content <- loadPageFromDatabase 5
       content `shouldBe` []
+
     -- test fake handler
     it "should do nothing at all" $ do
       let inputData = [1..10]
