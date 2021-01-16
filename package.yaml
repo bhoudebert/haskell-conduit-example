@@ -1,10 +1,7 @@
-name:                condouit
+name:                haskell-conduit-example
 version:             0.1.0.0
-github:              "githubuser/condouit"
-license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2021 Author name here"
+github:              "bhoudebert/haskell-conduit-example"
+license:             GPL2
 
 extra-source-files:
 - README.md
@@ -17,17 +14,18 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/condouit#readme>
+description:         Please see the README
 
 dependencies:
 - base >= 4.7 && < 5
+- conduit
 - conduit
 
 library:
   source-dirs: src
 
 executables:
-  condouit-exe:
+  haskell-conduit-example-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -35,12 +33,12 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - condouit
+    - haskell-conduit-example
     # Used for pagination
 
 
 tests:
-  condouit-test:
+  haskell-conduit-example-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -48,4 +46,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - condouit
+    - haskell-conduit-example

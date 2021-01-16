@@ -1,8 +1,10 @@
-# condouit
+# haskell-conduit-example
 
-This is an example of using Conduit with Monad IO faking call to a real something with IO effect (could be database for example).
+This is an example of using Conduit with IO Monad faking calls to a real database.
 
-You can play a lot with the two variable pageSize and chunksSize to see how everything is handled, it will help you a lot to get what's happening under the hood.
+With this simple program you will be able to fully, I hope understand how it works.
+
+You can/should play a lot with the two constants pageSize and chunksSize to see how everything is handled under the hood, it will help you a lot to get what's happening at conduit & database level.
 
 You should try:
 - pageSize = chunksSize = 20
