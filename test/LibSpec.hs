@@ -26,6 +26,9 @@ spec = do
 
     -- testing page generator.
     it "page 1 should be full" $ do
+      content <- loadPageFromDatabase 0
+      length content `shouldBe` pageSize
+    it "page 1 should be full" $ do
       content <- loadPageFromDatabase 1
       length content `shouldBe` pageSize
     it "page 2 should be full" $ do
